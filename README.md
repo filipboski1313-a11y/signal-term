@@ -36,16 +36,19 @@ A minimalist, fast Signal client for the terminal built in Go. Designed for dist
 
 ## Quick Install & Run
 
+Install once, then run `signal` from anywhere in your terminal.
+
 ### Windows (PowerShell)
 
 ```powershell
-iwr https://github.com/filipboski1313-a11y/signal-term/releases/latest/download/signal-windows-amd64.exe -OutFile signal.exe; .\signal.exe
+iwr https://github.com/filipboski1313-a11y/signal-term/releases/latest/download/signal-windows-amd64.exe -OutFile "$env:LOCALAPPDATA\Microsoft\WindowsApps\signal.exe"
+signal
 ```
 
 ### Linux (x86_64)
 
 ```bash
-curl -L https://github.com/filipboski1313-a11y/signal-term/releases/latest/download/signal-linux-amd64 -o ~/.local/bin/signal && chmod +x ~/.local/bin/signal && signal
+sudo curl -L https://github.com/filipboski1313-a11y/signal-term/releases/latest/download/signal-linux-amd64 -o /usr/local/bin/signal && sudo chmod +x /usr/local/bin/signal && signal
 ```
 
 ### macOS
@@ -53,16 +56,16 @@ curl -L https://github.com/filipboski1313-a11y/signal-term/releases/latest/downl
 **Apple Silicon (M1 / M2 / M3 / M4):**
 
 ```bash
-curl -L https://github.com/filipboski1313-a11y/signal-term/releases/latest/download/signal-macos-arm64 -o /usr/local/bin/signal && chmod +x /usr/local/bin/signal && signal
+sudo mkdir -p /usr/local/bin && sudo curl -L https://github.com/filipboski1313-a11y/signal-term/releases/latest/download/signal-macos-arm64 -o /usr/local/bin/signal && sudo chmod +x /usr/local/bin/signal && signal
 ```
 
 **Intel Mac:**
 
 ```bash
-curl -L https://github.com/filipboski1313-a11y/signal-term/releases/latest/download/signal-macos-amd64 -o /usr/local/bin/signal && chmod +x /usr/local/bin/signal && signal
+sudo mkdir -p /usr/local/bin && sudo curl -L https://github.com/filipboski1313-a11y/signal-term/releases/latest/download/signal-macos-amd64 -o /usr/local/bin/signal && sudo chmod +x /usr/local/bin/signal && signal
 ```
 
-*(If macOS blocks the binary on first run, run `xattr -d com.apple.quarantine $(which signal)` once.)*
+*(If macOS blocks the binary on first run, run `sudo xattr -d com.apple.quarantine /usr/local/bin/signal` once.)*
 
 ---
 
